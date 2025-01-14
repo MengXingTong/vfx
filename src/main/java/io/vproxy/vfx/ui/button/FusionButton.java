@@ -10,9 +10,11 @@ import javafx.event.EventHandler;
 import javafx.scene.Cursor;
 import javafx.scene.control.Label;
 import javafx.scene.layout.*;
+import javafx.scene.paint.Color;
 import javafx.stage.Window;
 
 public class FusionButton extends AbstractFusionButton {
+
     private final Label text = new Label() {{
         setTextFill(Theme.current().fusionButtonTextColor());
         FontManager.get().setFont(FontUsages.fusionButtonText, this);

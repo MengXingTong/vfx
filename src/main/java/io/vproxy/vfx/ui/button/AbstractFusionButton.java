@@ -7,18 +7,45 @@ import javafx.scene.paint.Color;
 public abstract class AbstractFusionButton extends AbstractFusionPane {
     protected abstract void onMouseClicked();
 
+    private Color normalColor = Theme.current().fusionButtonNormalBackgroundColor();
     @Override
     protected Color normalColor() {
-        return Theme.current().fusionButtonNormalBackgroundColor();
+        if(normalColor == null) {
+            normalColor = Theme.current().fusionButtonNormalBackgroundColor();
+        }
+        return normalColor;
+    }
+    @Override
+    public void setNormalColor(Color color) {
+        normalColor = color;
+        super.setNormalColor(color);
     }
 
+    private Color hoverColor = Theme.current().fusionButtonHoverBackgroundColor();
     @Override
     protected Color hoverColor() {
-        return Theme.current().fusionButtonHoverBackgroundColor();
+        if(hoverColor == null) {
+            hoverColor = Theme.current().fusionButtonHoverBackgroundColor();
+        }
+        return hoverColor;
+    }
+    @Override
+    public void setHoverColor(Color color){
+        hoverColor = color;
+        super.setHoverColor(color);
     }
 
+    private Color downColor = Theme.current().fusionButtonDownBackgroundColor();
     @Override
     protected Color downColor() {
-        return Theme.current().fusionButtonDownBackgroundColor();
+        if(downColor == null) {
+            downColor = Theme.current().fusionButtonDownBackgroundColor();
+        }
+        return downColor;
+    }
+    @Override
+    public void setDownColor(Color color){
+        downColor = color;
+        super.setDownColor(color);
     }
 }
